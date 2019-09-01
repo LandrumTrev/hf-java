@@ -5,6 +5,9 @@
 // public means everyone can access it
 public class MyFirstApp {
 
+  // a Java program needs at least one class with a "main" method
+  // in order start the program and access all other classes
+
   // "void" means method does not return a value
   // "main" is this method's name...the class's "main" method
   // method expects an array of Strings and will call it "args"

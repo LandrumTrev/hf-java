@@ -1,3 +1,5 @@
+// before, during, and after a WHILE loop
+
 public class Loopy {
 
   public static void main(String[] args) {

@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Shuffle1",
+      "request": "launch",
+      "mainClass": "Shuffle1"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - PhraseOMatic",
       "request": "launch",
       "mainClass": "PhraseOMatic"

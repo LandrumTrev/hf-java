@@ -4,7 +4,7 @@
 
 public class GuessGame {
 
-  // declare three variables using the Player class as a Type
+  // declare three instance variables using the Player class as a Type
   Player p1;
   Player p2;
   Player p3;
@@ -12,18 +12,20 @@ public class GuessGame {
   // and the rest is a single method to call that contains the game
   public void startGame() {
 
-    // assign new Player objects to the declared Player variables
+    // assign new Player objects to the declared Player instance variables
+    // the variable names represent an entire Player object,
+    // which has it's own instance variables and a method
     p1 = new Player();
     p2 = new Player();
     p3 = new Player();
 
-    // declare a variable to hold the guess of each Player object
+    // declare variables to hold the guess of each Player object
     // and give them all an initial value of 0
     int guessp1 = 0;
     int guessp2 = 0;
     int guessp3 = 0;
 
-    // declare a Boolean variable for each Player
+    // and declare a Boolean variable for each Player
     // to record whether the Player's guess was correct
     // and give them all an initial value of false
     boolean p1isRight = false;

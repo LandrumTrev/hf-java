@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - GameLauncher",
+      "request": "launch",
+      "mainClass": "GameLauncher"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - MovieTestDrive",
       "request": "launch",
       "mainClass": "MovieTestDrive"

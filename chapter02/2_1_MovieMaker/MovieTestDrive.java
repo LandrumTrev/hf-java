@@ -4,7 +4,9 @@
 // create a Class to TEST the Movie Objects
 public class MovieTestDrive {
 
-  // NOTE: the TestDrive Class DOES have a "main" method
+  // NOTE: the TestDrive Class DOES have a "main" method, in order to:
+  // 1. test the object creation class, and
+  // 2. run the Java application
   public static void main(String[] args) {
 
     // make a new Movie called "one" with the Movie object factory class
@@ -31,3 +33,7 @@ public class MovieTestDrive {
   }
 
 }
+
+// Java (OO, Object Oriented) applications 
+// are just objects talking to other objects,
+// by calling methods (functions) on one another

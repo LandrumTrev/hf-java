@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - DrumKitTestDrive",
+      "request": "launch",
+      "mainClass": "DrumKitTestDrive",
+      "projectName": "hf-java_7530e624"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - DVDPlayerTestDrive",
       "request": "launch",
       "mainClass": "DVDPlayerTestDrive",

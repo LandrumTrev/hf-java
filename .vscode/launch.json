@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - EchoTestDrive",
+      "request": "launch",
+      "mainClass": "EchoTestDrive",
+      "projectName": "hf-java_7530e624"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - DrumKitTestDrive",
       "request": "launch",
       "mainClass": "DrumKitTestDrive",

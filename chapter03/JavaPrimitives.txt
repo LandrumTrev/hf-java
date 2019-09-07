@@ -1,0 +1,286 @@
+Chapter 3 : Java Variables
+
+two types of variables in Java:
+Primitive
+Reference
+
+Primitive variables hold values of a specific Type of data
+Reference variables hold a reference to an object instance of a Class
+
+------------------------------------------
+------------------------------------------
+
+PRIMITIVE VARIABLES
+
+Integers come in four different sizes, so Java knows how much memory bits to allocate:
+
+long - 64-bit (-huge to huge)
+int - 32-bit (-2,147,483,648 to 2,147,483,647)
+short - 16-bit (-32,768 to 32,767)
+byte - 8-bit (-128 to 127)
+
+
+Decimal number variables come in two sizes:
+(NOTE: float values MUST end with an "f" otherwise Java thinks it is a double)
+
+float - 32-bit (varies)
+double - 64-bit (varies)
+
+
+Boolean variables only hold TRUE or FALSE values
+
+boolean - JVM-specific (true OR false)
+
+
+Character variables are always 16-bit
+
+char - 16-bit (0 to 65,535)
+
+------------------------------------------
+
+SAMPLE VARIABLE DECLARATIONS AND ASSIGNMENTS
+
+int x;
+x = 234;
+
+byte b = 89;
+
+boolean isFun = true;
+
+double d = 3456.98;
+
+char c = 'f';
+
+int z = x;
+
+boolean isPunkRock;
+isPunkRock = true;
+
+boolean powerOn;
+powerOn = isFun;
+
+long big = 3456789;
+
+float f = 32.5f;
+
+------------------------------------------
+
+Make sure that your value can fit into the declared variable Type.
+Java WILL NOT compile even if the current values will work;
+it only compares types to avoid any possibility of future data loss:
+
+int x = 24;
+byte b = x;
+// won't work!
+// int x's value could become too large for byte b to hold
+
+Even though the value of 24 will fit in a byte variable, 
+since x is an int, it could in the future 
+hold a number too big to fit into a byte variable.
+
+BUT, Java WILL let you assign the value of a smaller variable
+into a variable type with a larger capacity, since there is no data loss risk:
+
+byte b = 24;
+int x = b;
+// works! 
+// byte b's value will never be too large for int x to hold
+
+------------------------------------------
+
+Values can be assigned to variables several ways:
+
+literal:
+x = 12;
+
+reference:
+x = y;
+
+expression:
+x = y + 12;
+
+------------------------------------------
+
+NAMING CONVENTIONS for variables in Java
+
+Variable names MUST start with either:
+a letter, _ (underscore), or $ (dollar sign).
+
+Variables CANNOT START with a number as the first character,
+but CAN have numbers in any other character position.
+
+Variable names can be anything EXCEPT for one of Java's reserved words:
+
+boolean byte char double float int long short public private protected abstract final native static strictfp synchronized transient volatile if else do while switch case default for break continue assert class extends implements import instanceof interface new package super this catch finally try throw throws return void const goto enum 
+
+------------------------------------------
+
+EIGHT PRIMITIVE TYPES and a mnemonic:
+
+boolean char byte short int long float double
+
+Be Careful Bears Shouldn't Ingest Large Furry Dogs
+
+------------------------------------------
+------------------------------------------
+
+OBJECT REFERENCE VARIABLES
+
+Object Reference Variables hold a reference to an object, 
+where the object's Class is used as the variable's Type.
+
+Creating a new object called "myDog" using the Dog class:
+
+Dog myDog = new Dog();
+// Dog class used as both a variable type AND as a method to create a new object.
+
+And invoke inherited Dog methods (or specific myDog methods) on myDog by using dot syntax:
+
+myDog.bark(); // inherited from Dog class (all Dogs have this method)
+myDog.singRhianna(); // a unique method only myDog has
+
+NERD NOTE: you cannot perform arithmatic, etc. on a reference variable
+(like you can do in C).
+
+------------------------------------------
+
+Swapping referenced objects
+
+As long as a referenced object's variable Type matches the Class of the object,
+then the named variable can be reassigned to a new object of the same type.
+
+Dog fido = new Dog(); // fido is a new Dog object 
+Dog rex = new Dog(); // rex is a different new Dog object
+
+Dog myDog = fido; // myDog is a new variable reference referring to the existing fido Dog object
+myDog = rex; // existing myDog variable now refers to rex Dog object instead of fido Dog object
+
+FINAL
+UNLESS a variable is marked as "final", then it can only ever refer to one specific object.
+
+NULL
+When a variable reference is set to "null" it becomes eligible for garbage collection.
+All objects live on the Garbage-Collectible Heap, and Java determines whether an object
+is eligible to be garbage collected whenever more memory is needed,
+based on whether Java sees that an object can be used in future code or not.
+
+
+------------------------------------------
+
+Reassignment
+variable names and the objects they reference are separate and reassignable:
+
+Book b = new Book();
+Book c = new Book();
+// b and c refer to two different Book objects
+
+Book d = c;
+// d is a new reference to c's object
+
+c = b;
+// now c is pointing to b's object, instead of it's original object
+// whereas d is still pointing to c's original object,
+// b and c now point to b's original object.
+
+------------------------------------------
+
+Garbage collection
+
+Book b = new Book(); // Object1
+Book c = new Book(); // Object2
+b = c; // now both b and c refer to Object 2.
+
+// now no variable refers to Object1, and there is no way to relink any reference to it.
+// Object1 is now unreachable and is eligible for Garbage Collection.
+
+c = null;
+// now only b refers to Object2, but c is still active (assigned value is null),
+// so the variable c is still in play (NOT garbage collected),
+// and a new value can be assigned to c later if desired.
+
+------------------------------------------
+
+ARRAYS
+array variables are declared with brackets [] after the value Type.
+an array variable is a reference to an Array Object.
+
+The array is an Object, but its elements are Primitives or Object references.
+
+------------------------------------------
+
+Arrays of Primitives
+
+int[] nums; 
+// nums is now a named variable that can hold an array of integers 
+
+nums = new int[7];
+// "new" is used to create an array that holds 7 (currently undefined) integers
+
+int[] nums = new int[7];
+// those two lines can be combined for brevity
+
+each element in the array that nums refers to can be accessed with:
+nums[0], nums[1], nums[2], nums[3], nums[4], nums[5], nums[6]
+
+------------------------------------------
+
+The Java standard library includes all sorts of other sophisticated data structures, like:
+maps, trees, sets, etc.
+
+------------------------------------------
+
+Arrays of Object references
+
+arrays can also hold references to objects of a certain type,
+instead of primitive values of a certain type.
+
+Dog[] pets; 
+// "pets" is a named variable that can hold an array of Dog object references
+
+pets = new Dog[7]; 
+// the "pets" variable's value is a reference to an array holding seven Dog object reference slots
+// but there aren't any actual Dog objects in the array yet.
+
+Dog[] pets = new Dog[7];
+// or name the variable and assign it to an array of 7 elements all at once.
+
+pets[0] = new Dog();
+pets[1] = new Dog();
+// now the first two elements in pets[] array hold references to two separate new Dog objects
+// while the last five elements [2]-[6] are still empty.
+
+------------------------------------------
+
+Accessing values and methods in array objects
+
+on non-array objects, you access values and methods like this:
+
+Dog fido = new Dog();
+fido.name = "Fido";
+fido.bark();
+fido.chase();
+
+but when an object is in array, we don't have a variable name like "fido"
+to use to access the values and methods of that object.
+
+instead we use the array[element] notation to access values and methods:
+
+Dog[] myDogs = new Dog[3];
+// assign myDogs name to a variable that can hold an array of Dog object references, 
+// AND assign that variable name to an array object with 3 empty Dog object reference slots.
+
+myDogs[0] = new Dog();
+// fill the first [0] slot with an actual new Dog object
+
+myDogs[0].name = "Fido";
+// and set the value of the .name property of the Dog object at position [0]
+
+myDogs[0].bark();
+// and then make the Dog at position [0] in the array .bark()
+
+
+
+
+
+
+

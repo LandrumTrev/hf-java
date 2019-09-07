@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - BooksTestDrive",
+      "request": "launch",
+      "mainClass": "BooksTestDrive",
+      "projectName": "hf-java_7530e624"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Dog",
       "request": "launch",
       "mainClass": "Dog",

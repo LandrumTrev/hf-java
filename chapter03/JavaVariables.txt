@@ -278,7 +278,13 @@ myDogs[0].name = "Fido";
 myDogs[0].bark();
 // and then make the Dog at position [0] in the array .bark()
 
+------------------------------------------
 
+NULL: an empty reference
+
+a reference variable has a value of "null" when it is not referencing any object.
+
+(is this also true of named but undefined primitive variables?)
 
 
 

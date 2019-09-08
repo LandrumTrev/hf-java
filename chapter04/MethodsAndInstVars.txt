@@ -1,0 +1,123 @@
+Instance Variable values (state) interact with Methods (behaviors)
+
+A Method can test (if/else, switch/case, etc.) the value of an Instance Variable
+in order to determine how the Method will function and/or what value it will return.
+
+------------------------------------------------
+
+PASSING ARGUMENT DATA INTO A METHOD'S PARAMETERS
+
+A method's Caller can pass Arguments (values) into the waiting Parameters (internal variables)
+of that method.
+
+As always, the Type of data accepted by the Parameter must be declared, and the Argument data
+passed into the Parameter must match its type.
+
+
+void meth1(String param1, int param2) {
+  System.out.println(param1 + " of " + param2);
+}
+
+obj1.meth1("value!", 42);
+// pass values literally
+
+String v1 = "even more value!";
+int v2 = 93;
+obj2.meth1(v1, v2);
+// or pass variables containing values
+
+NOTE: if you pass primitive values as literals or variables, these are COPIES
+that do not affect the original (external to the method) values of those variables.
+
+HOWEVER if you are passing object references, since those are just references that point to
+independent objects, the behavior inside the method WILL affect the external object referenced.
+
+------------------------------------------------
+
+METHOD RETURN values
+
+A Method's return value must always be declared;
+if there is no data returned from the method, its return value is "void"
+
+void meth2() { ... }
+
+But if you want to return a value from a method, simply declare it's data type,
+just like declaring the data type of a variable.
+
+The return value must match (or be compatible with) the declared type.
+(See Polymorphism)
+
+And use the "return" keyword before the value returned by (at the end of) a method.
+NOTE that no code after "return" will run, so put "return" at the end.
+
+int meaningOfLife() {
+  return 42;
+}
+
+NOTE: nothing in Java requires that you actually USE a return value for anything;
+you could simply use a return value for testing purposes without using it in functional code.
+
+------------------------------------------------
+
+RETURN MULTIPLE VALUES FROM A METHOD
+
+A method can only return a single value, but you can easily bundle multiple values
+into a data structure such as an Array (ArrayList, Set, Tree, Map, etc.)
+in order to return multiple values as a single method "return" value.
+
+------------------------------------------------
+
+GETTERS and SETTERS 
+(aka Accessors and Mutators)
+
+Getter and Setters are specialized types of methods whose purpose in life it to...
+you guessed it, Get and Set the value of Instance Variables.
+
+The formal naming convention is to name getters and setters with "get" and "set"
+prefixed to the name of the Instance Variable that they get and set; pretty straightforward.
+
+int numberOfDogs = 0; // the variable to get and set
+int getNumberOfDogs() { ... } // the getter
+void setNumberOfDogs() { ... } // the setters
+
+Getters usually have a return value, so that return value can be placed into a variable.
+Setters usually have no return value (void), since they are doing their thing internally.
+
+
+class ElectricGuitar {
+
+  String brand;
+  int numOfPickups;
+  boolean rockStarUsesIt;
+
+  String getBrand() {
+    return brand;
+  }
+
+  void setBrand(String aBrand) {
+    brand = aBrand;
+  }
+
+  int getNumOfPickups() {
+    return numOfPickups;
+  }
+
+  void setNumOfPickups(int num) {
+    numOfPickups = num;
+  }
+
+  boolean getRockStarUsesIt() {
+    return rockStarUsesIt;
+  }
+
+  void setRockStarUsesIt(boolean yesOrNo) {
+    rockStarUsesIt = yesOrNo;
+  }
+  
+}
+
+------------------------------------------------
+
+
+ENCAPSULATION
+

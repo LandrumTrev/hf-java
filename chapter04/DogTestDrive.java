@@ -16,6 +16,7 @@ class DogTestDrive {
     one.bark();
     two.bark();
     three.bark();
-    
+
+    one.barks(5);
   }
 }

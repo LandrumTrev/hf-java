@@ -153,3 +153,91 @@ public void setHeight(int ht) {
   }
 }
 
+SO IN YOUR OBJECT CLASS DO SOMETHING LIKE THIS:
+
+  private int size;
+
+  public int getSize() {
+    return size;
+  }
+
+  public void setSize(int s) {
+    size = s;
+  }
+
+AND THEN IN THE TEST OR CALLING CLASS DO THIS:
+
+  GoodDog one = new GoodDog();
+  one.setSize(70);
+  // instead of one.size = 70;
+
+  System.out.println("Dog one: " + one.getSize());
+
+
+ANYWHERE THAT YOU WOULD USE A LITERAL VALUE OR A VARIABLE NAME,
+YOU CAN USE A GETTER OR SETTER METHOD CALL INSTEAD:
+
+// instead of
+int x = 3 + 24;
+
+// or
+int x = 3 + one.size;
+
+// use
+int x = 3 + one.getSize();
+
+------------------------------------------------
+
+GETTING AND SETTING VALUE INSIDE AN Array
+
+Works pretty much how you think it would:
+
+// create an instance variable to hold an array of Dog objects
+Dog[] pets;
+
+// assign that variable name an object which is an array of 7 Dog object slots
+pets = new Dog[7];
+
+// fill the first two array elements with Dog objects
+pets[0] = new Dog();
+pets[1] = new Dog();
+
+// and use the objects' array element index to get/set those Dog objects
+pets[0].setSize(30);
+int x = pets[0].getSize();
+
+------------------------------------------------
+
+INSTANCE VARIABLE DEFAULT VALUES
+
+So you can declare AND initialize (assign it a value) an instance variable at the same time:
+
+int size = 42;
+String name = "Zaphod Beeblebrox";
+
+...but what is the default value of an UNINITIALIZED instance variable?
+
+int size;
+String name;
+
+DEPENDS ON THE VARIABLE'S TYPE:
+
+integer types: 0
+floating points: 0.0
+booleans: false
+references: null
+
+------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

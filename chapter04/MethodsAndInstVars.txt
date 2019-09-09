@@ -121,3 +121,35 @@ class ElectricGuitar {
 
 ENCAPSULATION
 
+Encapsulation is the use of marking instance variables and methods with either
+"public" or "private" in order to protect variable data from undesired input.
+
+Primarily the "main" method of a class and any needed Getters and Setters
+would be marked "public" and all instance variables would be marked "private",
+the private instance variables requiring a Getter and Setter to access their values.
+
+Using the intermediary of public Getters and Setters on private variables is best practice
+in all cases, even if the Setter is not currently "doing anything", i.e.,
+performing a security check (with a RegEx, etc.), or limiting numeric input to a certain range, etc.
+because it allows you to change your mind later and add a test, restriction, etc.
+inside an existing Setter without breaking anyone elses code in the way they access the object's data.
+Their code would only break if they were inputting undesired data (hackers? noobs? clueless users?)
+which is something you want to stop anyway--you only break code that you want to break.
+
+The miniscule performance hit of adding getters and setters is negligible, and the trade off is
+much tighter security and functional insurance, which is probably why you're using Java to begin with.
+
+theCat.height = 27;
+// exposed (public) variable can be set like this
+
+theCat.height = 0;
+// but allows Bad Things like this to happen
+
+// so you need something like this
+// which only lets a .height of at least 9 to be set 
+public void setHeight(int ht) {
+  if (ht > 9) {
+    height = ht;
+  }
+}
+

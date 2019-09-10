@@ -229,10 +229,75 @@ references: null
 
 ------------------------------------------------
 
+INSTANCE VARIABLES vs LOCAL VARIABLES
 
 
+INSTANCE VARIABLES are those declared inside a Class,
+but not within a Method. They coexist at the same level as Methods,
+and are usually (alwasy?) declared before Method definitions.
+
+Uninitialized Instance Variables have as-is usable values (see list above).
 
 
+LOCAL VARIABLES are those declared inside a Method,
+and include a Method's parameter(s) if present, which are just 
+local variables that are defined on the fly by outside callers of the method.
+
+However... Local Variable MUST be initialized with a value before they are used!
+You CANNOT rely on the same default values (above) that uninitialized Instance Variables have.
+
+
+class AddThing {
+  int a; // instance variable (default value 0)
+  int b = 12; // instance variable, initialized value 12
+
+  public int add() {
+    int total = a + b; // total is a local variable
+    // okay, because as an instance variable, "a" has a default value of 0
+    return total;
+  }
+}
+
+BUT...
+
+class Foo {
+  public void go() {
+    int x; // UNINITIALIZED LOCAL VARIABLE...
+    int z = x + 3; // COMPILER WILL FREAK OUT b/c LOCAL x NOT INITIALIZED 
+    // so, here "x" will not have the default value 0 like an instance variable would 
+  }
+}
+
+------------------------------------------------
+
+COMPARING VARIABLES (primitives or references)
+
+== will tell you if two primitive values are the same, and
+== will also tell you if two references point to the SAME object.
+
+But... if you want to know if TWO DIFFERENT OBJECTS are "equal",
+.equals() method will give you that.
+
+However... what "equal" means depends on what kind of object it is.
+Two String objects that have the same characters? Sure, .equal() no problem.
+
+But two Dog objects being equal because they have the same weight? Maybe not.
+This issue will be tackled in later chapters.
+
+Specific type doesn't matter to == as long as the values are the same:
+
+int a = 3;
+byte b = 3;
+if (a == b) // true
+
+and for object references:
+
+Foo a = new Foo();
+Foo b = new Foo();
+Foo c = a;
+if (a == b) // false
+if (a == c) // true
+if (b == c) // false
 
 
 

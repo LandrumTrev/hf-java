@@ -1,0 +1,53 @@
+Chapter 5 : A first simple program
+
+Simple Dot Com Game
+
+
+New concepts to introduce:
+
+OPERATORS
+
+FOR LOOPS
+
+RANDOM NUMBER GENERATION
+
+CASTING (turn a String into an int)
+
+HOW TO WRITE A PROGRAM (a game)
+
+
+How to write a program
+
+-----------------------
+
+Summary:
+Create a command-line interface game in the style of Battleship, where the player attempts to guess the location and sink three hidden 3-space DotComs randomly arranged on a 7 by 7 grid, with individual cells indicated by a letter-number code (A-G vertical, 0-6 horizontal). Game's responses to player guesses are "miss", "hit", and "kill" (all three cells of a DotCom are hit for a kill).
+
+-----------------------
+
+Game Flow:
+1. User starts a new game
+  a. Game creates three DotComs
+  b. Game places the DotComs randomly on a virtual grid
+
+2. Game play begins, repeat until no more DotCom cells are left:
+  a. Prompt user for a guess (A1, C5, etc)
+  b. Check user guess against populated grid for miss (empty cell), hit (cells remaining for that DotCom), kill (no cells remaining for that DotCom)
+  c. Check for any remaining DotComs (yes? continue, no? game over)
+
+3. Game finishes
+  a. Give user a score/rating based on number of guesses needed to sink all DotComs
+
+-----------------------
+
+Create Flow Chart of game flow process:
+  start, actions and conditional decisions, end
+  (see GoogleDocs screen shot of flow chart)
+
+-----------------------
+
+Start pseudo-coding by determining all the Objects needed (NOT the Procedures)
+
+
+
+

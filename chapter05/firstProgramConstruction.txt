@@ -46,7 +46,59 @@ Create Flow Chart of game flow process:
 
 -----------------------
 
-Start pseudo-coding by determining all the Objects needed (NOT the Procedures)
+Start with a very simple (MVP) game, using a single row (instead of a grid), and one DotCom (not three).
+This will allow you to focus on working out the basics first, before making it more complicated.
+
+-----------------------
+
+Start pseudo-coding by determining all the Objects needed (NOT the Procedures):
+a Game class
+a DotCom class
+
+SimpleDotComGame
+  void main 
+
+SimpleDotCom 
+  int[] locationCells
+  int numOfHits
+  ---
+  String checkYourself(String guess)
+  void setLocationCells(int[] loc)
+
+-----------------------
+
+Don't make it more complicated than it needs to be.
+
+For example, you don't need to build an array of 7 ints to represent the whole row,
+and then assign a DotCom to three of those seven;
+you only need an array that holds the three cells the DotCom occupies.
+
+-----------------------
+
+1. GAME STARTS and creates one DotCom (new object) and gives it a location on three consecutive cells out of seven (cells 0-6).
+
+2. GAME PLAY BEGINS and game prompts user for a guess, then checks for a hit on any DotCom cells.
+If a hit, increment numOfHits variable.
+
+3. GAME FINISHES when all three cells of the DotCom have been hit (test: numOfHits var value is 3), and game tells user how many guesses it took to sink the DotCom.
+
+-----------------------
+
+SAMPLE INTERACTION
+
+enter a number: 2
+hit
+enter a number: 3
+hit
+enter a number: 4
+miss
+enter a number: 1
+kill
+You took 4 guesses
+
+-----------------------
+
+DEVELOPING A class
 
 
 

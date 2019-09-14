@@ -21,7 +21,8 @@ class SimpleDotCom {
     // and set its default value as "miss" (only changes if "hit" or "kill")
     String result = "miss";
 
-    // FOR EACH LOOP element ("cell") in the locationCells array...
+    // ENHANCED FOR LOOP: "for each cell in locationCells"
+    // REGULAR FOR LOOP: for (int i=0;i<10;i++){ // do something 10 times }
     for (int cell : locationCells) {
 
       // COMPARE "guess" to the current loop's locationCell,

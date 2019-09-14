@@ -15,16 +15,15 @@ class SimpleDotCom {
 
     // CONVERT the "userGuess" from String to int
 
-    // REPEAT (LOOP) THE FOLLOWING for each of the locationCells in the int[] array:
+    // REPEAT (LOOP) for each of the locationCells in the int[] array:
 
       // COMPARE "userGuess" to the locationCell
 
-      // IF the "userGuess" matches any remaining locationCell,
+      // IF the "userGuess" matches a loop iteration's locationCell,
 
         // INCREMENT the number of hits,
 
-        // and FIND OUT if it is the last locationCell remaining
-
+        // (and FIND OUT if it is the last locationCell remaining...hit or kill?)
         // IF the numOfHits is 3, RETURN "kill"
 
         // ELSE (if not a "kill"), RETURN "hit"

@@ -106,15 +106,23 @@ DEVELOPING A CLASS (one approach)
 
 3.  Write pseudocode as a framework to develop actual code around.
 
-4.  Write Tests for the Methods.
+4.  Write Tests for the Methods. (before there's even written code to test!)
 
-5.  Implement the Class. 
+5.  Implement the Class. (write some production code) 
 
 6.  Test the Methods.
 
 7.  Debug and re-implement as needed.
 
 8.  Have someone else look at your code.
+
+Writing test code before you write your actual code helps you clarify how to write the clearest, most concise code to get the result you want by keeping the end result in mind (what you want and what you don't want, and how to prevent getting results you don't want).
+
+Write a little test, then write the bit of code that you will test with it, then run the test.
+Then write another test and write a little bit more code for it, then run all code with both tests.
+At each iteration, always run all the previous tests to make sure new code doesn't break any old tests.
+
+
 
 -----------------------
 
@@ -132,6 +140,24 @@ half-Java, half-plain English, usually contains three parts:
 - Instance Variable declarations
 - Method declarations
 - Method logic (most important)
+
+-----------------------
+
+Extreme Programming (XP), an Agile software development philosophy
+
+- small, frequent releases
+- develop in iteration cycles
+- don't include anything that's not in the spec 
+- write test code first 
+- no killer schedules; work regular hours 
+- refactor code whenever and wherever possible
+- don't release anything until it passes all tests 
+- set realistic schedules based around small releases
+- keep it simple
+- program in pairs, and move people around so everyone knows everything about all the code 
+
+-----------------------
+
 
 
 

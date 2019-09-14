@@ -10,33 +10,57 @@ class SimpleDotCom {
 
   // declare a method with a parameter that takes the user's guess String,
   // checks it, and returns either HIT, MISS, or KILL
-  String checkYourself(String userGuess) {
-    // GET the user guess as the String parameter ("guess")
 
-    // CONVERT the "userGuess" from String to int
+  // method takes in the user guess as the String parameter ("guess")
+  String checkYourself(String stringGuess) {
 
-    // REPEAT (LOOP) for each of the locationCells in the int[] array:
+    // PARSE "stringGuess" String value into an integer
+    int guess = Integer.parseInt(stringGuess);
 
-      // COMPARE "userGuess" to the locationCell
+    // create a "result" variable to hold the String value the method will return,
+    // and set its default value as "miss" (only changes if "hit" or "kill")
+    String result = "miss";
 
-      // IF the "userGuess" matches a loop iteration's locationCell,
+    // FOR EACH LOOP element ("cell") in the locationCells array...
+    for (int cell : locationCells) {
 
-        // INCREMENT the number of hits,
+      // COMPARE "guess" to the current loop's locationCell,
+      // and if "guess" value equals the value in this loop's "cell"...
+      if (guess == cell) {
 
-        // (and FIND OUT if it is the last locationCell remaining...hit or kill?)
-        // IF the numOfHits is 3, RETURN "kill"
+        // needs to call a setter method to update value of a "hit" cell
+        // in the locationCells array so that cell cannot be hit again (and again)
+        // and different IF conditional test in IF below this one
 
-        // ELSE (if not a "kill"), RETURN "hit"
+        // then update the value of "result" from "miss" to "hit",
+        result = "hit";
 
-      // ELSE (if "userGuess" does not match any remaining locationCell), RETURN "miss"
-      
-      // end IF
+        // and INCREMENT the number of hits by 1,
+        numOfHits++;
 
-    // end LOOP
+        // and break out of the FOR EACH loop, into the remaining code below
+        break;
+      } // end IF
+
+    } // end LOOP
+
+    // the length of the locationCells array is 3 (elements),
+    // so if 3 is also the value of numOfHits (all 3 cells have been hit),
+    if (numOfHits == locationCells.length) {
+      // then update "result" value from "hit" to "kill".
+      result = "kill";
+      // NOTE: BAD CODE, since you could just hit the same cell 3 times for a kill;
+      // use setter method in previous IF and different IF test in this IF conditional
+    } // end IF
+
+    // print the final resulting value of "result" to the CLI
+    System.out.println(result);
+
+    // and return the value of "result" as the value of calling this method
+    return result;
 
   } // end METHOD
 
-  
   // declare a Setter method to set the locationCells int[] array,
   // which takes in an int[] array which has three consecutive ints
   void setLocationCells(int[] cellLocations) {

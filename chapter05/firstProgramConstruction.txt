@@ -98,8 +98,40 @@ You took 4 guesses
 
 -----------------------
 
-DEVELOPING A class
+DEVELOPING A CLASS (one approach)
 
+1.  Figure out what the class should do.
+
+2.  List the Instance Variables and Methods it needs.
+
+3.  Write pseudocode as a framework to develop actual code around.
+
+4.  Write Tests for the Methods.
+
+5.  Implement the Class. 
+
+6.  Test the Methods.
+
+7.  Debug and re-implement as needed.
+
+8.  Have someone else look at your code.
+
+-----------------------
+
+PREP CODE - a type of pseudocode to help you focus on logic without worrying about syntax.
+
+TEST CODE - Classes and Methods that will stress test real code.
+
+REAL CODE - Actual production code.
+
+-----------------------
+
+PREP CODE example
+
+half-Java, half-plain English, usually contains three parts:
+- Instance Variable declarations
+- Method declarations
+- Method logic (most important)
 
 
 

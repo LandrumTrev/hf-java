@@ -6,7 +6,7 @@ class SimpleDotCom {
   int[] locationCells;
 
   // declare an int to hold the number of hits scored, set to 0
-  int numOfHits;
+  int numOfHits = 0;
 
   // declare a method with a parameter that takes the user's guess String,
   // checks it, and returns either HIT, MISS, or KILL
@@ -64,11 +64,10 @@ class SimpleDotCom {
 
   // declare a Setter method to set the locationCells int[] array,
   // which takes in an int[] array which has three consecutive ints
-  void setLocationCells(int[] cellLocations) {
-    // GET cellLocations as an int[] array parameter
-
-    // ASSIGN (SET) the cellLocations param to the locationCells Instance Variable
-
+  public void setLocationCells(int[] locs) {
+    // set the value of the locationCells array to
+    // the value of the array "locs" passed into setLocationCells() setter
+    locationCells = locs;
   }
 
 } // end METHOD

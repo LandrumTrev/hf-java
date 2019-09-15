@@ -158,6 +158,25 @@ Extreme Programming (XP), an Agile software development philosophy
 
 -----------------------
 
+FOR LOOPS and WHILE LOOPS
 
+FOR LOOPS should always be used when you know the number of loops that need to be executed.
+(because FOR LOOPS are less computationally expensive than WHILE LOOPS...memory allocation).
+WHILE LOOPS are used when an action needs to continue as long as some condition is TRUE.
+
+WHILE LOOP: keeps repeating as long as a condition is true (like repeating IF/ELSE conditional),
+useful for when you don't have a specific number of loops to use in a FOR LOOP.
+    while ( condition == true ) { // then keep doing this stuff over and over }
+
+ENHANCED FOR LOOP: shorthand for loop, (like a JS "FOR IN" LOOP, uses : instead of in)
+define a named parameter variable and the variable holding an array of elements to loop over.
+    "for each cell in locationCells"
+    for (int cell : locationCells) { // stuff to do on each cell }
+
+REGULAR FOR LOOP: defines a specific number of times to loop, 
+based on the number of things that exist to loop over.
+    for (int i=0;i<10;i++){ // do something 10 times }
+
+-----------------------
 
 

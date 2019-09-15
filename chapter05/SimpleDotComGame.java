@@ -9,12 +9,17 @@ public class SimpleDotComGame {
     // in order to give the player a final rating
     int numOfGuesses = 0;
 
+    // GameHelper class accepts input from CLI
+    GameHelper helper = new GameHelper();
+
     // REQUIRED: instantiate a SimpleDotCom object
     SimpleDotCom dot = new SimpleDotCom();
 
     // REQUIRED: give the DotCom a location of 3 consecutive cells on a row of 7
 
     // HINT: compute a random number 0-4 to be the starting cell
+    // Math.random returns a double (decimal), here we "cast" it into a whole
+    // integer
     int randomCell = (int) (Math.random() * 5);
 
     // create an array to hold the randomCell and it's next two cells
@@ -29,18 +34,20 @@ public class SimpleDotComGame {
     // start a while loop that runs as long as isAlive's value is TRUE
     while (isAlive == true) {
 
-      // instantiate a variable that will hold the value of the user input
-      String userGuess;
+      // ==================================================================
+      // // TEST CODE: SELF-GENERATES RANDOM GAME INPUTS WITHOUT REQUIRING CLI INPUT
+      // int rando = (int) (Math.random() * 7);
+      // // then convert that random number into a String
+      // String userGuess = Integer.toString(rando);
+      // // REQUIRED: ask the user for a guess (CLI message that takes input)
+      // System.out.println("Enter a number (0-6) : " + userGuess);
+      // ==================================================================
 
-      // TEST VALUE: HAVE THE COMPUTER PLAY ITSELF
-      int rando = (int) (Math.random() * 7);
-      // then convert that random number into a String
-      userGuess = Integer.toString(rando);
-
-      // REQUIRED: ask the user for a guess (CLI message that takes input)
-      System.out.println("Enter a number (0-6) : " + userGuess);
-      // how does Java accept input on the same line as the output?
-      // set the value of userGuess to the user's guess input number
+      // ==================================================================
+      // PRODUCTION CODE: USES (advanced concepts) PRE-WRITTEN CLI INPUT CLASS
+      // use GameHelper to get input from CLI
+      String userGuess = helper.getUserInput("enter a number 0-6: ");
+      // ==================================================================
 
       // and then run the object's checkYourself method to determine miss/hit/kill
       // setting the returned value in a variable

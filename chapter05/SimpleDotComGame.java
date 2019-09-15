@@ -15,14 +15,10 @@ public class SimpleDotComGame {
     // REQUIRED: give the DotCom a location of 3 consecutive cells on a row of 7
 
     // HINT: compute a random number 0-4 to be the starting cell
-    int cellOne = (int) (Math.random() * 4);
+    int randomCell = (int) (Math.random() * 5);
 
-    // and then define the next two following cells
-    int cellTwo = cellOne++;
-    int cellThree = cellTwo++;
-
-    // create an array to hold the cell values generated
-    int[] locations = { cellOne, cellTwo, cellThree };
+    // create an array to hold the randomCell and it's next two cells
+    int[] locations = { randomCell, randomCell + 1, randomCell + 2 };
 
     // and use the setter method to set the var holding current location cells
     dot.setLocationCells(locations);
@@ -54,7 +50,8 @@ public class SimpleDotComGame {
       numOfGuesses++;
 
       // if checkYourself() returns a final "kill" value,
-      if (guessResult == "kill") {
+      // OR, if (guessResult == "kill") {
+      if (guessResult.equals("kill")) {
         // then change isAlive from TRUE to FALSE
         isAlive = false;
         // and when the while loop terminates (when guessResult == "kill")

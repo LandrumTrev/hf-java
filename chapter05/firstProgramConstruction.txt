@@ -251,3 +251,19 @@ int z = x++; // x is incremented AFTER its value is assigned to z
 
 -----------------------
 
+ENHANCED FOR LOOP
+(aka the "FOR EACH" or "FOR IN" loop)
+
+for (String loopVarName : arrayName ) { // code to execute on each loop }
+
+The Enhanced For Loop gives you a simple compact way to
+loop over every element in an Array (or other types of collections (data structures)).
+
+You just make up a variable name that each loop iteration will use 
+to stand for the array element being looped over in each loop,
+pop in a : to mean "IN", and then list the array reference variable name. Easy as cake. 
+
+NOTE that the elements in the array MUST be compatible with loop variable type.
+(so with String loopVarName, all elements in the array need to be Strings)
+
+-----------------------

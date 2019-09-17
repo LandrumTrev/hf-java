@@ -179,4 +179,44 @@ based on the number of things that exist to loop over.
 
 -----------------------
 
+The pieces of a (regular) FOR LOOP
 
+for () {} - a for loop expression
+
+int i = 0; - initialization (initializing the iterator variable)
+Also note that more than one loop variable can be initialized (more on that later).
+
+i < 10; - boolean test (is this statement true? if yes, do a loop. if not, stop looping).
+Think of this as "WHILE", and a WHILE LOOP just containing this test section for any boolean condition.
+
+i++ - iteration expression. increment the iterator "i" by 1 on each pass of the loop.
+This section contains (simple) things you want to happen AFTER each loop.
+(Put the complicated stuff in the { loop code block } itself whenever possible).
+
+NOTE that instead of hard coding a number into the boolen test (i < 10),
+you can insert an external variable who's (whole integer) number may change (i < x).
+
+Same/same with "i = 0" if you need to do "i = y" for some reason.
+
+-----------------------
+
+TWO WAYS TO WRITE THE SAME LOOP
+
+for (int i = 0; i < 8; i++ ) {
+  System.out.println(i);
+}
+System.out.println("done");
+
+OR 
+
+int i = 0;
+while ( i < 8 ) {
+  System.out.println(i);
+  i++;
+}
+System.out.println("done");
+
+FOR LOOP makes it more compact if the loops are based on a known number.
+WHILE LOOP makes it more compact and flexible if it is a conditional test.
+
+-----------------------

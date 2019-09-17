@@ -220,3 +220,34 @@ FOR LOOP makes it more compact if the loops are based on a known number.
 WHILE LOOP makes it more compact and flexible if it is a conditional test.
 
 -----------------------
+
+Increments and Decrements
+
+x++;
+SAME AS 
+x = x + 1;
+
+x--;
+SAME AS 
+x = x - 1;
+
+BUT, putting the increment operators BEFORE the variable means
+FIRST increment the value of the variable, THEN use the new value of the variable.
+
+int x = 0;
+// at first, x == 0
+int z = ++x; // x is incremented BEFORE its value is assigned to z
+// then x is incremented (x == 1), and
+// then z is set to value of x (z == 1)
+
+BUT...
+
+int x = 0;
+// at first, x == 0
+int z = x++; // x is incremented AFTER its value is assigned to z
+// then z is set of value of x (z == 0), and
+// then x is incremented (x == 1)
+
+
+-----------------------
+

@@ -267,3 +267,55 @@ NOTE that the elements in the array MUST be compatible with loop variable type.
 (so with String loopVarName, all elements in the array need to be Strings)
 
 -----------------------
+
+CASTING PRIMITIVES
+Because Java doesn't have that icky type coercion thing that JavaScript does.
+
+String num = "2";
+int x = 2;
+if (x == num) {...} // BOOOM!
+
+JavaScript would be like, "sure, why not?"
+But the Java compiler will laugh and mock your Type ignorance.
+
+You have to ask Java nicely to please turn your stringy number into a real number first.
+
+Integer.parseInt() 
+
+String num = "3"; // num == "3"
+realNum = Integer.parseInt(num); // realNum == 3
+
+ALSO, you can't directly shove numbers in big containers into little number containers.
+
+long y = 42;
+int x = y; // NOPE
+
+Even though 42 is a perfectly fine value for an int, the fact that its Type is long
+means that y COULD at some point get too gigantically big to fit into an int.
+Which would make bad things happen, so Java won't let you do it in the first place.
+
+BUT, if you show Java that you really know what you're doing, you can
+CAST a bigger number into a smaller container with the understanding
+that you may lose something along the way--as long as you're doing it on purpose.
+
+long y = 42;
+int x = (int) y; // YEP
+
+NOTE that things can get weird though...
+that's what you get when you go chopping bits off the end of you numbers.
+
+long y = 40002;
+short x = (short) y; // (sound of bits being chopped off)
+// x == -25534 !!!
+
+BUT sometimes (a lot of times) you just want to round off a decimal (float/double)
+to a whole number (int, etc.), like when using Math.random()
+
+float f = 3.14f; // NOTE you NEED the "f" on the end of floats
+int x = (int) f; // x == 3
+
+DON'T EVEN THINK about casting something to or from a Boolean, just walk away.
+Again, this isn't JavaScript.
+
+-----------------------
+
